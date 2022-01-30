@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from './MainComponent';
+
+import { firebaseConfig } from './firebase.config';
+import { initializeApp } from "firebase/app";
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
+
+const firebaseApp = initializeApp({firebaseConfig});
+const firestore = getFirestore(firebaseApp);
+const auth = getAuth();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <h1>This is App </h1>
+        <Main />
     </div>
   );
 }
