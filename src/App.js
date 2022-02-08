@@ -1,21 +1,14 @@
 import './App.css';
-import Main from './MainComponent';
-
-import { firebaseConfig } from './firebase.config';
-import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-
-
-const firebaseApp = initializeApp({firebaseConfig});
-const firestore = getFirestore(firebaseApp);
-const auth = getAuth();
+import Chat from './component/Chat_Room';
+import MenuBar from './component/Navbar_Chat';
 
 function App() {
   return (
-    <div>
-        <h1>This is App </h1>
-        <Main />
+    <div className="App">
+      <h1>You're in App</h1>
+      <MenuBar/>
+      <h1>You're in App</h1>
+      <Chat/>
     </div>
   );
 }
